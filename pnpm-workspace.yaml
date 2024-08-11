@@ -1,0 +1,5 @@
+packages:
+  - 'packages/*'
+  - 'integrations/*'
+  - 'examples/react/*'
+  - 'examples/vue/*'

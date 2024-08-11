@@ -1,0 +1,20 @@
+{
+  "name": "@linsanxin/tsconfig",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "files": [
+    "base.json",
+    "library.json",
+    "node.json",
+    "web-app.json",
+    "web.json"
+  ],
+  "dependencies": {
+    "vite": "^5.3.5"
+  }
+}

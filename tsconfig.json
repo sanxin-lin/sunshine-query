@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["@linsanxin/tsconfig/library.json"],
+  "include": ["eslint.config.mjs", ".prettierrc.mjs"],
+  "exclude": ["node_modules"]
+}

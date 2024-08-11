@@ -1,0 +1,58 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": [
+        "pnpm-lock.yaml",
+        "**/.env.*local",
+        "**/tsconfig*.json",
+        "packages/query-core/*.json",
+        "packages/query-core/src/**/*.ts"
+    ],
+    "globalEnv": [
+        "NODE_ENV"
+    ],
+    "tasks": {
+        "build": {
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "preview": {
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "build:analyze": {
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "@vben/backend-mock#build": {
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                ".nitro/**",
+                ".output/**"
+            ]
+        },
+        "stub": {},
+        "dev": {
+            "dependsOn": [],
+            "outputs": [],
+            "cache": false,
+            "persistent": true
+        },
+        "typecheck": {
+            "outputs": []
+        }
+    }
+}
