@@ -27,7 +27,7 @@ describe('onlineManager', () => {
     onLineSpy.mockRestore()
   })
 
-  test('setEventListener 函数必须传入 boolean 类型参数', async () => {
+  test('setEventListener 函数参数 setOnline 必须传入 boolean 类型参数', async () => {
     let count = 0
 
     const setup = (setOnline: Listener) => {
@@ -57,7 +57,7 @@ describe('onlineManager', () => {
     expect(remove2Spy).toHaveBeenCalledTimes(1)
   })
 
-  test('window 不存在时，cleanup 函数不会执行的', () => {
+  test('window 不存在时，cleanup(removeEventListener) 函数不会执行的', () => {
     const restoreIsServer = setIsServer(true)
 
     const removeEventListenerSpy = vi.spyOn(globalThis, 'removeEventListener')
