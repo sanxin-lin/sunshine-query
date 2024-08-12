@@ -52,4 +52,21 @@ describe('notifyManager', () => {
 
     expect(notifySpy).toHaveBeenCalledTimes(1)
   })
+
+  test('报错时，需执行 notify 进行通知', async () => {
+    const notifySpy = vi.fn()
+
+    notifyManagerTest.setNotifyFunction(notifySpy)
+
+    try {
+      notifyManagerTest.batch(() => {
+        notifyManagerTest.schedule(() => {})
+        throw new Error('')
+      })
+    } catch {}
+
+    await sleep(1)
+
+    expect(notifySpy).toHaveBeenCalledTimes(1)
+  })
 })
