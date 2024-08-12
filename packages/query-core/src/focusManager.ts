@@ -70,13 +70,13 @@ export class FocusManager extends Subscribable<Listener> {
   }
 
   onFocused = () => {
-    const focused = this.isFocus()
+    const focused = this.isFocused()
     this.listeners.forEach((listener) => {
       listener(focused)
     })
   }
 
-  isFocus = () => {
+  isFocused = () => {
     if (isBoolean(this.#focused)) return this.#focused
 
     // document global can be unavailable in react native

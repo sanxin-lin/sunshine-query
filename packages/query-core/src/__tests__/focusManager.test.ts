@@ -37,17 +37,17 @@ describe('focusManager', () => {
 
     await sleep(30)
     expect(count).toEqual(1)
-    expect(focusManager.isFocus()).toBeTruthy()
+    expect(focusManager.isFocused()).toBeTruthy()
   })
 
-  test('document 不存在的话，isFocused 返回是 true', () => {
+  test('document 不存在的话，isFocuseded 返回是 true', () => {
     const { document } = globalThis
 
     // @ts-expect-error
     delete globalThis.document
 
     focusManager.setFocused()
-    expect(focusManager.isFocus()).toBeTruthy()
+    expect(focusManager.isFocused()).toBeTruthy()
     globalThis.document = document
   })
 
